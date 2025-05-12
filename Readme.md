@@ -99,3 +99,31 @@ x-->y
 
 - This is a Functional Dependent table if we consider EmployeeID and EmployeeName.
 - If we Consider EmployeeName and Department its not functionally dependent.
+
+## 6-3 Normalization and 1st Normal Forms(1NF)
+
+#### What is Normal Forms?
+
+- A series of guidelines that help to ensure that the design of a database is efficient, organized and free from data anomalies
+
+- There are different types of normal forms. 0NF,1NF,2NF,3NF
+
+![alt text](<WhatsApp Image 2025-05-12 at 20.16.22_24aff2f9.jpg>)
+
+#### 1NF
+
+![alt text](<WhatsApp Image 2025-05-12 at 20.20.35_1184551d.jpg>)
+
+- There are some rules to determine that if a table is 1NF or not
+  1. **Atomic values :** In this table 1st course is not atomic since there are two values
+  2. **Unique Column Names :** This table do not has Unique column names.
+  3. **Positional Dependency Of Data :** There will be no positional dependency. if we change the row position the data meaning must be same.
+  4. **Same Data Type :** Columns Should Contain data that are the same type.
+  5. **Determine Primary Key :** one key should be made primary key and that should be unique
+- All the rules are satisfied for the table except 2 and 1.
+- To convert this into 1NF we have to remove the duplicate column and make the courses atomic by splitting the courses into individual course.
+
+![alt text](<WhatsApp Image 2025-05-12 at 20.29.49_1f993ac1.jpg>)
+
+- converted to 1NF but there is one problem like data redundancy came in title. These will be fixed in next normal forms.
+- Another problem is we are now not able to determine primary key since some have became duplicate. We can handle this merging serial_no & Courses to make unique primary key. as two keys are taken to make primary key they are called composite primary key.
