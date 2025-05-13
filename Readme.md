@@ -249,3 +249,86 @@ x-->y
 ![alt text](<WhatsApp Image 2025-05-13 at 17.37.25_9057dd91.jpg>)
 
 https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+
+## 6-9 Exploring Data Flow On an Application And Exploring PSQL
+
+![alt text](<WhatsApp Image 2025-05-13 at 17.56.50_bed5f906.jpg>)
+
+- In Present days client server architecture is maintained.
+- There is client and server and the the client server communication happens to ren the server.
+- Suppose we haver a user and he goes to a web page and wants to see a information and clicks a button and the the request goes to a backend through a specific address. we have to tell which port we will be using.
+- Server will check if there it have to take and give and take data to database.
+- If its required that we have to get a data the server will request to our DBMS(Postgres) and connect. While connecting we have to tell host and port.
+- we have to give some user credentials to access the database then we will get the database access.
+- If everything is right and the connection is stabled and then DBMS will check from which database the data is coming since we can make multiple database in our postgres.
+- DBMS will match that the user has access of the database or not. if has access
+- Server to database connection is done normally using driver to reduce deep level works. driver gives us simple api and we work. as like we use mongoose to connect.
+- The drivers are like prisma, type orm drizzel orm in server to connect with database.
+
+#### After Installing Postgre
+
+![alt text](image-2.png)
+
+- This is a postgres shell by using this we will connect with postgres server and run commands to create, delete, update database, create table and so on.
+- Normally we will use graphic user interface but we need to see it if we work remotely we have to use this terminal.
+
+![alt text](image-3.png)
+
+- press enter since we want to run in localhost
+- Database using postgres by default
+- and port is by default Port : 5432
+- Username [postgres] . postgres gives us a default user name.
+- password : during installation what we have gave
+
+![alt text](image-4.png)
+
+- now we are in postgres server.
+
+#### Popular commands for postgres
+
+`select version();` - this will give us the version
+
+![alt text](image-5.png)
+
+`\l` - This will show the available database list in our pc
+
+![alt text](image-7.png)
+
+- here postgres is main database and templates are given.
+- suppose we want to change the main database to main
+
+`\c template0` - this will connect the template0 database
+![alt text](image-8.png)
+
+- To see if the database has any table or not we have to write
+
+`\d` - will show all the tables available with all sequence and views
+![alt text](image-9.png)
+
+- tables are called relation
+
+`create table test_table(name varchar(50));` - this will create a table in our database
+
+![alt text](image-10.png)
+
+![alt text](image-11.png)
+
+`\dn` - this will show the schema in our table.
+
+![alt text](image-12.png)
+
+`\! cls` - this will clear the cmd
+
+`\d+` - this will show some extra things of the table
+![alt text](image-13.png)
+
+`\dt` - this will show the tables with now view and sequence just simple table and relations
+![alt text](image-14.png)
+
+`\conninfo` - this will show the connection info.
+
+![alt text](image-15.png)
+
+`\q` - this will quit the shell
+
+- we can create database, schema, user, role and privileged role we can create.
