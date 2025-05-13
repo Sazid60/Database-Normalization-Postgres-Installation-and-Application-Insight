@@ -155,3 +155,28 @@ x-->y
 
 - so we introduce another table and got back the ability. we have to do it like this. and this reflects the all info of previous table and there is no partial dependency. and this is now **Lossless Decomposition**. and this is converted to 2NF
 - 2NF steps are followed to handle the complexity of **Many to Many** Relationship.
+
+## 5-5 3rd Normal Forms and Transitive Dependency
+
+- There are some rules to determine that if a table is 3NF or not
+
+  1. Must be in 2NF
+  2. Must not contain transitive dependency
+
+- suppose x-->y and y-->z that means x can determine y and y can determine z then x can also determine z, x-->z this is transitive dependency. and these type of dependency can not exist in 3NF.
+
+![alt text](<WhatsApp Image 2025-05-13 at 16.18.30_81f862b7.jpg>)
+
+- In This table the primary key will be stud_id since its unique.
+- As stud_id column is unique it has functional dependency.
+- Here stud_id and state is functionally dependent state and country is also functionally dependant.
+- So here we can determine country using stud_id through state. this is transitive dependency.
+- state,country are non key attributes. Here an non key can determine another non-key so this is transitive dependency.
+
+- 3rd Normal Form says there will be no transitive dependency. we can normalize the situation by splitting the table.
+
+![alt text](<WhatsApp Image 2025-05-13 at 16.30.41_bf617f3e.jpg>)
+
+- still there is problem. so data needs to be connected.
+  ![alt text](<WhatsApp Image 2025-05-13 at 16.31.37_99d3b1f8.jpg>)
+- still there is reparation. normalization can never remove the repetition completely it minimizes the reparation.
