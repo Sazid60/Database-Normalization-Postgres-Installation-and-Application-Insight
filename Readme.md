@@ -128,7 +128,7 @@ x-->y
 - converted to 1NF but there is one problem like data redundancy came in title. These will be fixed in next normal forms.
 - Another problem is we are now not able to determine primary key since some have became duplicate. We can handle this merging serial_no & Courses to make unique primary key. as two keys are taken to make primary key they are called composite primary key.
 
-## 5-4 2nd Normal Forms and Partial Dependencies
+## 6-4 2nd Normal Forms and Partial Dependencies
 
 - There are some rules to determine that if a table is 2NF or not
 
@@ -156,7 +156,7 @@ x-->y
 - so we introduce another table and got back the ability. we have to do it like this. and this reflects the all info of previous table and there is no partial dependency. and this is now **Lossless Decomposition**. and this is converted to 2NF
 - 2NF steps are followed to handle the complexity of **Many to Many** Relationship.
 
-## 5-5 3rd Normal Forms and Transitive Dependency
+## 6-5 3rd Normal Forms and Transitive Dependency
 
 - There are some rules to determine that if a table is 3NF or not
 
@@ -180,3 +180,45 @@ x-->y
 - still there is problem. so data needs to be connected.
   ![alt text](<WhatsApp Image 2025-05-13 at 16.31.37_99d3b1f8.jpg>)
 - still there is reparation. normalization can never remove the repetition completely it minimizes the reparation.
+
+## 6-6 Resolving Many to Many With Junction Table.
+
+![alt text](<WhatsApp Image 2025-05-13 at 16.39.08_699f5992.jpg>)
+
+- We have a many to many relationship problem. If many to many situation comes 4th step will be added. otherwise anomalies will be here.
+
+![alt text](<WhatsApp Image 2025-05-13 at 16.40.57_a1540774.jpg>)
+
+- One or many Student can take many courses ans well many Many student can take one course or many. This is many to many relationship.
+
+![alt text](<WhatsApp Image 2025-05-13 at 16.43.31_349cccd9.jpg>)
+
+- These tables are not good. since c_ids and s_ids are containing multi values because of many to many relation. As we know we have to keep atomic.
+
+![alt text](<WhatsApp Image 2025-05-13 at 16.46.51_1bf18ea9.jpg>)
+
+- we have to resolve the many to many situation.
+
+![alt text](<WhatsApp Image 2025-05-13 at 16.48.45_66b82d55.jpg>)
+
+- we can organize the table like these but the problem is data duplication i mean redundancy is coming. Data redundancy is the main devil. If there is redundancy ther anomalies will come as well.
+- In the tables partial dependency is also coming. suppose we have make a composite primary id combining s_id & c_id. here s_id and name is partially dependent since if we know the id we can tell the name. here 2NF rules violated.
+
+![alt text](<WhatsApp Image 2025-05-13 at 16.57.12_54fc3902.jpg>)
+
+- we can think like this but here some anomalies may come since there are a lot of null values. this is not also good. If course increases if any course is added by any one else. and the person has taken the only last course will get null values up to the course he has taken.
+
+- the red marks attributes are the problem
+
+![alt text](<WhatsApp Image 2025-05-13 at 17.00.16_4b46b180.jpg>)
+
+- to solve this we can take help of bridge table
+
+![alt text](<WhatsApp Image 2025-05-13 at 17.02.40_150a5e2d.jpg>)
+
+- we are taking two foreign key and making a junction table or intermediate table. and the purpose of it is making and maintaining relationship between student and the course.
+- Student (one to many)--> junction table <-- (one to may)Course. Direct many to many relationship is disappeared.
+
+![alt text](<WhatsApp Image 2025-05-13 at 17.07.22_100384f7.jpg>)
+
+- here we have decomposed the tables with 0 data loss and the Junction table here will have composite primary key by combining s_id,c_id.
