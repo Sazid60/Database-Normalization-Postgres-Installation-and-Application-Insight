@@ -127,3 +127,31 @@ x-->y
 
 - converted to 1NF but there is one problem like data redundancy came in title. These will be fixed in next normal forms.
 - Another problem is we are now not able to determine primary key since some have became duplicate. We can handle this merging serial_no & Courses to make unique primary key. as two keys are taken to make primary key they are called composite primary key.
+
+## 5-4 2nd Normal Forms and Partial Dependencies
+
+- There are some rules to determine that if a table is 2NF or not
+
+  1. It must satisfy the rules of 1st normal form.
+  2. Must not contain any non-prime/non-key attribute that is functionally dependent on a proper subset of any candidate key of the relation.
+
+- since we know by using the key we can find a row uniquely non-key do not works here. so the non-prime/non-key the keys by which we can not find out the row uniquely.
+
+![alt text](<WhatsApp Image 2025-05-13 at 12.33.55_379e1bcf.jpg>)
+
+- In this table there is no individual key that we can select as primary key. rather bwe can combine two attribute(StudentID, CourseID) to identify a row uniquely (this is called composite primary key). Other two attributes (courseName,Instructor) are non-prime/non-key attributes. here non-prime keys must be dependent on the composite primary key entirely and can not be partially dependent.
+- If wer have composite primary key and any part of it has functional dependency with the non-key/non-primes, then its not a 2NF. like if you just take CourseID from the composite primary key and can define CourseName or Instructor then its not a 2NF.
+- This tables CourseID and CourseName is functionally dependent which reflect partial functional dependency. and do not follow 2NF and will be a problem.
+
+![alt text](<WhatsApp Image 2025-05-13 at 12.51.16_2c1efb09.jpg>)
+
+- To Normalize the table and make it follow 2NF we can split the table
+
+![alt text](<WhatsApp Image 2025-05-13 at 13.03.35_8550cc80.jpg>)
+
+- while doing it we have lost the ability that which student is doing which course since we have lost StudentID. this is called **lossy decomposition**. and we do not want to do this as this is a bad practice.
+
+![alt text](<WhatsApp Image 2025-05-13 at 13.05.48_a8ad8f09.jpg>)
+
+- so we introduce another table and got back the ability. we have to do it like this. and this reflects the all info of previous table and there is no partial dependency. and this is now **Lossless Decomposition**. and this is converted to 2NF
+- 2NF steps are followed to handle the complexity of **Many to Many** Relationship.
