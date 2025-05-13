@@ -227,3 +227,25 @@ x-->y
 
 ![alt text](image-1.png)
 ![alt text](image.png)
+
+## 6-8 What is Postgres And Installing Postgres.
+
+- Its Worlds Most Advanced Open Source Relational Database Management System.
+- We can make our computer a database server installing software.
+- We can Communicate using SQL
+
+#### Why we will use Postgres
+
+1. Its open source
+2. RDBMS
+3. Modern (supports modern data type, Supports modern features like MVCC)
+4. ACID Compliance
+5. Advanced Data Types
+6. Saleability
+7. Indexing
+8. Community Support
+
+![alt text](<WhatsApp Image 2025-05-13 at 17.36.58_e50a18f1.jpg>)
+![alt text](<WhatsApp Image 2025-05-13 at 17.37.25_9057dd91.jpg>)
+
+https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
