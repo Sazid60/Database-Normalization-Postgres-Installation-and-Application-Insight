@@ -222,3 +222,8 @@ x-->y
 ![alt text](<WhatsApp Image 2025-05-13 at 17.07.22_100384f7.jpg>)
 
 - here we have decomposed the tables with 0 data loss and the Junction table here will have composite primary key by combining s_id,c_id.
+
+## 6-7 Completing ER Diagram
+
+![alt text](image-1.png)
+![alt text](image.png)
