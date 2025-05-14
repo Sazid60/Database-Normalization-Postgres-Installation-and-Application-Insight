@@ -1,32 +1,5 @@
 # Database-Normalization-Postgres-Installation-and-Application-Insight
 
-Case Study File Link: https://lily-plate-b6a.notion.site/Case-Study-082bcd700e034e0b85a54bf82ba590ab?pvs=4
-
-# Case Study
-
-A Medical Database System is needed to enhance the efficiency and effectiveness of healthcare services. This system will be able to seamlessly integrates the information of patients, doctors, appointments, medical records, and medical facilities.
-
-**Entities:**
-
-1. **Patients:**
-   - Attributes: PatientID (Primary Key), FirstName, LastName, DateOfBirth, Gender, ContactNumber, Email
-2. **Doctors:**
-   - Attributes: DoctorID (Primary Key), FirstName, LastName, Specialization, ContactNumber, Email
-3. **Appointments:**
-   - Attributes: AppointmentID (Primary Key), PatientID (Foreign Key), DoctorID (Foreign Key), AppointmentDate, AppointmentTime, Status
-4. **Medical Records:**
-   - Attributes: RecordID (Primary Key), AppointmentID (Foreign Key), Diagnosis, Prescription, TestResults, createdAt
-5. **Medical Facilities:**
-   - Attributes: FacilityID (Primary Key), FacilityName, Location, ContactNumber
-
-**Relationships:**
-
-- Patients can have multiple appointments with different doctors.
-- Doctors can have multiple appointments with different patients.
-- Each appointment may have a corresponding medical record, and vice versa.
-- A medical facility can have multiple doctors, and a doctor can work in multiple medical facilities.
-- This relationship is represented through a junction table.
-
 ## 6-1 Understanding Anomalies
 
 - Anomalies in database refer to inconsistency or unexpected issues that can occur during data manipulation and retrieval
@@ -286,34 +259,32 @@ https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 
 #### Popular commands for postgres
 
-`select version();` - this will give us the version
+1. `select version();` - this will give us the version
 
 ![alt text](image-5.png)
 
-`\l` - This will show the available database list in our pc
+1. `\l` - This will show the available database list in our pc
 
 ![alt text](image-7.png)
 
 - here postgres is main database and templates are given.
 - suppose we want to change the main database to main
 
-`\c template0` - this will connect the template0 database
+3. `\c template0` - this will connect the template0 database
+
 ![alt text](image-8.png)
 
-- To see if the database has any table or not we have to write
-
-`\d` - will show all the tables available with all sequence and views
-![alt text](image-9.png)
-
-- tables are called relation
-
-`create table test_table(name varchar(50));` - this will create a table in our database
+4. `create table test_table(name varchar(50));` - this will create a table in our database
 
 ![alt text](image-10.png)
 
 ![alt text](image-11.png)
 
-`\dn` - this will show the schema in our table.
+5. `\d` - will show all the tables available with all sequence and views. To see if the database has any table or not we have to write. tables are called relation
+
+![alt text](image-9.png)
+
+6. `\dn` - this will show the schema in our table.
 
 ![alt text](image-12.png)
 
@@ -322,7 +293,7 @@ https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 `\d+` - this will show some extra things of the table
 ![alt text](image-13.png)
 
-`\dt` - this will show the tables with now view and sequence just simple table and relations
+`\dt` - this will show the tables with no view and sequence just simple table and relations
 ![alt text](image-14.png)
 
 `\conninfo` - this will show the connection info.
@@ -332,3 +303,32 @@ https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 `\q` - this will quit the shell
 
 - we can create database, schema, user, role and privileged role we can create.
+
+Case Study File Link: https://lily-plate-b6a.notion.site/Case-Study-082bcd700e034e0b85a54bf82ba590ab?pvs=4
+
+# Case Study Example
+
+A Medical Database System is needed to enhance the efficiency and effectiveness of healthcare services. This system will be able to seamlessly integrates the information of patients, doctors, appointments, medical records, and medical facilities.
+
+**Entities:**
+
+1. **Patients:**
+   - Attributes: PatientID (Primary Key), FirstName, LastName, DateOfBirth, Gender, ContactNumber, Email
+2. **Doctors:**
+   - Attributes: DoctorID (Primary Key), FirstName, LastName, Specialization, ContactNumber, Email
+3. **Appointments:**
+   - Attributes: AppointmentID (Primary Key), PatientID (Foreign Key), DoctorID (Foreign Key), AppointmentDate, AppointmentTime, Status
+4. **Medical Records:**
+   - Attributes: RecordID (Primary Key), AppointmentID (Foreign Key), Diagnosis, Prescription, TestResults, createdAt
+5. **Medical Facilities:**
+   - Attributes: FacilityID (Primary Key), FacilityName, Location, ContactNumber
+
+**Relationships:**
+
+- Patients can have multiple appointments with different doctors.
+- Doctors can have multiple appointments with different patients.
+- Each appointment may have a corresponding medical record, and vice versa.
+- A medical facility can have multiple doctors, and a doctor can work in multiple medical facilities.
+- This relationship is represented through a junction table.
+
+## Er Diagram
