@@ -288,19 +288,20 @@ https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 
 ![alt text](image-12.png)
 
-`\! cls` - this will clear the cmd
+7. `\! cls` - this will clear the cmd
 
-`\d+` - this will show some extra things of the table
+8. `\d+` - this will show some extra things of the table
+
 ![alt text](image-13.png)
 
-`\dt` - this will show the tables with no view and sequence just simple table and relations
-![alt text](image-14.png)
+9. `\dt` - this will show the tables with no view and sequence just simple table and relations
+   ![alt text](image-14.png)
 
-`\conninfo` - this will show the connection info.
+10. `\conninfo` - this will show the connection info.
 
 ![alt text](image-15.png)
 
-`\q` - this will quit the shell
+11. `\q` - this will quit the shell
 
 - we can create database, schema, user, role and privileged role we can create.
 
@@ -332,3 +333,5 @@ A Medical Database System is needed to enhance the efficiency and effectiveness 
 - This relationship is represented through a junction table.
 
 ## Er Diagram
+
+![alt text](image-16.png)
