@@ -306,7 +306,7 @@ https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 
 Case Study File Link: https://lily-plate-b6a.notion.site/Case-Study-082bcd700e034e0b85a54bf82ba590ab?pvs=4
 
-# Case Study
+# Case Study Example
 
 A Medical Database System is needed to enhance the efficiency and effectiveness of healthcare services. This system will be able to seamlessly integrates the information of patients, doctors, appointments, medical records, and medical facilities.
 
@@ -330,3 +330,5 @@ A Medical Database System is needed to enhance the efficiency and effectiveness 
 - Each appointment may have a corresponding medical record, and vice versa.
 - A medical facility can have multiple doctors, and a doctor can work in multiple medical facilities.
 - This relationship is represented through a junction table.
+
+## Er Diagram
